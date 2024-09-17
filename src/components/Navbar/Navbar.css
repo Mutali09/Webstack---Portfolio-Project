@@ -1,0 +1,71 @@
+nav{
+    width: 100%;
+    background: #003366;
+    color: #ffffff;
+    padding: 4px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+}
+.logo{
+    width: 50px;
+}
+nav ul li{
+    display: inline-block;
+    margin: 5px 15px;
+    font-size: 15px;
+}
+
+/* ----- media query ------- */
+
+@media (max-width: 630px) {
+    .logo {
+        width: 120px; /* Adjust logo size */
+    }
+
+    nav ul li {
+        margin: 8px 13px; /* Adjust margins between list items */
+    }
+}
+
+/* For screens smaller than 600px */
+@media (max-width: 600px) {
+    nav {
+        padding: 13px 0; /* Adjust padding for the nav */
+        justify-content: flex-end;
+    }
+
+    nav ul {
+        background: #212ea0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        width: 160px; /* Added 'px' unit to width */
+        height: 100vh; /* Full screen height for mobile nav */
+        display: flex;
+        flex-direction: column; /* Stacking nav items vertically */
+        align-items: flex-end;
+        padding-top: 50px; /* Spacing at the top for a header or close button */
+        transform: translateX(100%); /* Initially hidden off-screen */
+        transition: transform 0.3s ease; /* Smooth transition */
+    }
+
+    nav ul.show {
+        transform: translateX(0); /* Slide-in effect for mobile nav */
+        z-index: 1; /* Bring to front when active */
+    }
+
+    nav ul li {
+        margin: 20px 0; /* Increased spacing for mobile nav items */
+    }
+
+    /* Optional: Adjust font sizes for smaller screens */
+    nav ul li a {
+        font-size: 18px; /* Adjust font size for better readability */
+    }
+}
